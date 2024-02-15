@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Установка необходимых пакетов для поддержки HTTPS
+sudo apt-get update
+sudo apt-get install -y apt-transport-https ca-certificates curl software-properties-common
+
+# Добавление официального ключа GPG для репозитория Docker
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+# Добавление репозитория Docker в источники APT
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+
+# Обновление индекса пакетов APT
+sudo apt-get update
+
+# Установка Docker
+sudo apt-get install -y docker-ce
