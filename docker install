@@ -15,3 +15,5 @@ sudo apt-get update
 
 # Установка Docker
 sudo apt-get install -y docker-ce
+
+sudo usermod -aG docker $USER
